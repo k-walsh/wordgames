@@ -5,25 +5,25 @@ import GameOver from "./GameOver";
 import Buttons from "./Buttons";
 
 const answers = {
-  y1: "yellow",
-  y2: "yellow",
-  y3: "yellow",
-  y4: "yellow",
+  BLUE: "yellow",
+  DOWN: "yellow",
+  GLUM: "yellow",
+  LOW: "yellow",
 
-  g1: "green",
-  g2: "green",
-  g3: "green",
-  g4: "green",
+  HULU: "green",
+  NETFLIX: "green",
+  PEACOCK: "green",
+  PRIME: "green",
 
-  b1: "blue",
-  b2: "blue",
-  b3: "blue",
-  b4: "blue",
+  GREEN: "blue",
+  MUSTARD: "blue",
+  PLUM: "blue",
+  SCARLET: "blue",
 
-  p1: "purple",
-  p2: "purple",
-  p3: "purple",
-  p4: "purple",
+  KETCHUP: "purple",
+  MAYO: "purple",
+  RELISH: "purple",
+  TARTAR: "purple",
 };
 
 const all = Object.keys(answers);
@@ -36,10 +36,10 @@ const answers_master = {
 };
 
 const categories = {
-  yellow: "YELLOW CATEGORY DESCRIPTION",
-  green: "GREEN CATEGORY DESCRIPTION",
-  blue: "BLUE CATEGORY DESCRIPTION",
-  purple: "PURPLE CATEGORY DESCRIPTION",
+  yellow: "SYNONYMS FOR SAD",
+  green: "STREAMING SERVICES",
+  blue: "CLUE CHARACTERS",
+  purple: "CONDIMENTS",
 };
 
 const colors = {
@@ -95,7 +95,9 @@ function Connections() {
   useEffect(() => {
     if (words.length === 0) {
       setGameover(true);
-      setWinOrLose("win");
+      if (winOrLose === "") {
+        setWinOrLose("win");
+      }
     }
   }, [words]);
 

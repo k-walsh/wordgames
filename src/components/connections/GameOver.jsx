@@ -2,6 +2,7 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 function GameOver(props) {
+  console.log(props);
   const [open, setOpen] = useState(true);
 
   return (
