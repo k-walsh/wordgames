@@ -104,9 +104,6 @@ p {
   font-size: 16px;
 }
 
-.connections-found {
-}
-
 .found-row {
   width: 630px;
   height: 80px;
@@ -178,4 +175,21 @@ p {
   justify-content: center;
   align-items: center;
   padding: 10px;
+}
+
+@media (max-width: 630px) {
+  .block,
+  .blockUnhover {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .found-row {
+    width: calc(80vw + 30px);
+    height: 20vw;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }
