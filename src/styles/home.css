@@ -1,0 +1,35 @@
+.homepageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  background-color: bisque;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-family: "Libre Franklin", sans-serif;
+  border-radius: 20px;
+  transition: color 0.3s ease;
+}
+
+.homepageButton:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.homepage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.nytImg {
+  width: 75px;
+}

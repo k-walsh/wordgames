@@ -1,0 +1,181 @@
+p {
+  font-size: 20px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.block {
+  width: 150px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #efefe6;
+  color: black;
+}
+
+.block:hover {
+  cursor: pointer;
+}
+
+.blockUnhover {
+  width: 150px;
+  height: 80px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bold;
+  background-color: #efefe6;
+  color: black;
+}
+
+.blockClicked {
+  background-color: #5a594e;
+  color: white;
+}
+
+.connections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+}
+
+.connections {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.cbutton {
+  font-weight: bold;
+  height: 48;
+  width: 88;
+  padding: 0 15px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 25px;
+  border: 2px solid #939393;
+  color: #939393;
+}
+
+.cbuttonActive {
+  border-color: black;
+  color: black;
+}
+
+.cbuttonSubmit:hover,
+.cbuttonActive:hover {
+  cursor: pointer;
+}
+
+.cbuttonSubmit {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  background-color: rgb(90, 89, 78);
+  border-radius: 50%;
+}
+
+.mistakes {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+  min-width: 120px;
+  align-items: center;
+}
+
+.cbutton p,
+.mistakes p {
+  font-size: 16px;
+}
+
+.connections-found {
+}
+
+.found-row {
+  width: 630px;
+  height: 80px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.found-row p {
+  margin: 0;
+}
+
+.alert {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.alert p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gameover-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gameover {
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  background-color: white;
+  position: relative;
+}
+
+.close {
+  transition: color 0.3s ease;
+  width: fit-content;
+  color: rgb(92, 92, 92);
+  position: absolute;
+  right: 0;
+  padding: 10px;
+}
+
+.close:hover {
+  cursor: pointer;
+  font-weight: 1000;
+  color: black;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}

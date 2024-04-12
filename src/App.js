@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Connections from "./components/connections/Connections";
+import Home from "./components/Home";
+import Crossword from "./components/crossword/Crossword";
+import SpellingBee from "./components/spellingbee/SpellingBee";
+import Wordle from "./components/wordle/Wordle";
+import Strands from "./components/strands/Strands";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/connections" element={<Connections />} />
+        <Route path="/crossword" element={<Crossword />} />
+        <Route path="/spelling-bee" element={<SpellingBee />} />
+        <Route path="/wordle" element={<Wordle />} />
+        <Route path="/strands" element={<Strands />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
