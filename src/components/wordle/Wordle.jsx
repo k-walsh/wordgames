@@ -175,7 +175,7 @@ function Wordle() {
           <p>{word}</p>
         </div>
       )}
-      {gameover && <GameOver win={win} />}
+      {gameover && <GameOver win={win} game="wordle" />}
     </div>
   );
 }

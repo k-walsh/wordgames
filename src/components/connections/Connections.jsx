@@ -63,7 +63,8 @@ function Connections() {
 
   const [incorrect, setIncorrect] = useState(false);
   const [gameover, setGameover] = useState(false);
-  const [win, setWin] = useState("");
+  const [win, setWin] = useState(false);
+  const [lose, setLose] = useState(false);
 
   const updateFound = (color) => {
     if (!(color in found)) {
@@ -80,6 +81,7 @@ function Connections() {
   useEffect(() => {
     if (mistakes.length === 0) {
       setWin(false);
+      setLose(true);
       setSelected([]);
       setClear((val) => !val);
 
@@ -94,7 +96,7 @@ function Connections() {
   }, [mistakes]);
 
   useEffect(() => {
-    if (words.length === 0) {
+    if (words.length === 0 && !lose) {
       setWin(true);
       setGameover(true);
     }
@@ -132,7 +134,7 @@ function Connections() {
           <p>incorrect! try again!</p>
         </div>
       )}
-      {!gameover && win === "" && (
+      {!gameover && !lose && (
         <div className="mistakes">
           <p>Mistakes remaining:</p>
           {mistakes.map((m, i) => (
@@ -140,7 +142,7 @@ function Connections() {
           ))}
         </div>
       )}
-      {!gameover && win === "" && (
+      {!gameover && !lose && (
         <Buttons
           setNumClicked={setNumClicked}
           setSelected={setSelected}
@@ -155,7 +157,7 @@ function Connections() {
         />
       )}
 
-      {gameover && <GameOver win={win} />}
+      {gameover && <GameOver win={win} game="connections" />}
     </div>
   );
 }
