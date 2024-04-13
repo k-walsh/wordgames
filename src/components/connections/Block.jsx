@@ -17,8 +17,6 @@ function Block(props) {
     setClicked(false);
   }, [props.clear]);
 
-  // console.log("-- block clicked", props.numClicked);
-
   const click = () => {
     if (props.numClicked < 4 || clicked) {
       if (clicked) {

@@ -34,7 +34,6 @@ function Buttons(props) {
         break;
       }
     }
-    console.log(correct);
 
     if (correct) {
       // set background color to answer, move to top

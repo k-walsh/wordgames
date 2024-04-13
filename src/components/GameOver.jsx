@@ -2,7 +2,6 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 function GameOver(props) {
-  console.log(props);
   const [open, setOpen] = useState(true);
 
   return (
@@ -12,7 +11,7 @@ function GameOver(props) {
           <div onClick={() => setOpen(false)} className="close">
             <CloseIcon />
           </div>
-          {props.winOrLose === "win" ? (
+          {props.win ? (
             <div className="message">
               <p>Great job!</p>
               <img

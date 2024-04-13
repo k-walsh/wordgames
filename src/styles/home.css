@@ -33,3 +33,8 @@
 .nytImg {
   width: 75px;
 }
+
+p {
+  font-size: 20px;
+  font-family: "Libre Franklin", sans-serif;
+}

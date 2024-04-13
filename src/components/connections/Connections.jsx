@@ -1,7 +1,7 @@
 import Block from "./Block";
 import "../../styles/connections.css";
 import { useEffect, useState } from "react";
-import GameOver from "./GameOver";
+import GameOver from "../GameOver";
 import Buttons from "./Buttons";
 
 const answers = {
@@ -60,9 +60,10 @@ function Connections() {
   const [selected, setSelected] = useState([]);
   const [mistakes, setMistakes] = useState([4, 3, 2, 1]);
   const [found, setFound] = useState({});
+
   const [incorrect, setIncorrect] = useState(false);
   const [gameover, setGameover] = useState(false);
-  const [winOrLose, setWinOrLose] = useState("");
+  const [win, setWin] = useState("");
 
   const updateFound = (color) => {
     if (!(color in found)) {
@@ -78,7 +79,7 @@ function Connections() {
 
   useEffect(() => {
     if (mistakes.length === 0) {
-      setWinOrLose("lose");
+      setWin(false);
       setSelected([]);
       setClear((val) => !val);
 
@@ -94,10 +95,8 @@ function Connections() {
 
   useEffect(() => {
     if (words.length === 0) {
+      setWin(true);
       setGameover(true);
-      if (winOrLose === "") {
-        setWinOrLose("win");
-      }
     }
   }, [words]);
 
@@ -111,7 +110,6 @@ function Connections() {
             style={{ backgroundColor: [colors[color]] }}
             className="found-row"
           >
-            {console.log(color)}
             <p style={{ fontWeight: "bold" }}>{categories[color]}</p>
             <p>{found[color].join(", ")}</p>
           </div>
@@ -134,7 +132,7 @@ function Connections() {
           <p>incorrect! try again!</p>
         </div>
       )}
-      {!gameover && winOrLose === "" && (
+      {!gameover && win === "" && (
         <div className="mistakes">
           <p>Mistakes remaining:</p>
           {mistakes.map((m, i) => (
@@ -142,7 +140,7 @@ function Connections() {
           ))}
         </div>
       )}
-      {!gameover && winOrLose === "" && (
+      {!gameover && win === "" && (
         <Buttons
           setNumClicked={setNumClicked}
           setSelected={setSelected}
@@ -157,10 +155,7 @@ function Connections() {
         />
       )}
 
-      {/* {(gameover && (winOrLose === 'lose')) && (
-
-      )}  */}
-      {gameover && <GameOver winOrLose={winOrLose} />}
+      {gameover && <GameOver win={win} />}
     </div>
   );
 }
